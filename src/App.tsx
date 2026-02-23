@@ -8,6 +8,9 @@ import {
   Zap,
   Users,
   Headphones,
+  TrendingUp,
+  Clock,
+  AlertCircle,
 } from 'lucide-react';
 
 function App() {
@@ -220,10 +223,104 @@ function App() {
           </div>
         </section>
 
+        <section className="py-24 px-6 border-t border-slate-800">
+          <div className="max-w-6xl mx-auto">
+            <h2 className="text-3xl font-bold mb-16 text-center">
+              What Gets Better
+            </h2>
+
+            <div className="grid md:grid-cols-3 gap-8">
+              <div className="p-8 rounded-xl border border-slate-700 bg-slate-900/50 hover:border-blue-500/30 transition-colors">
+                <TrendingUp className="w-10 h-10 text-green-400 mb-4" />
+                <h3 className="font-semibold text-lg mb-3">Faster Operations</h3>
+                <p className="text-slate-300">
+                  Tasks that took hours now complete in minutes. No more waiting for manual work to be done.
+                </p>
+              </div>
+
+              <div className="p-8 rounded-xl border border-slate-700 bg-slate-900/50 hover:border-blue-500/30 transition-colors">
+                <AlertCircle className="w-10 h-10 text-blue-400 mb-4" />
+                <h3 className="font-semibold text-lg mb-3">Fewer Errors</h3>
+                <p className="text-slate-300">
+                  Automation eliminates typos, missed steps, and inconsistencies. Better data, better decisions.
+                </p>
+              </div>
+
+              <div className="p-8 rounded-xl border border-slate-700 bg-slate-900/50 hover:border-blue-500/30 transition-colors">
+                <Clock className="w-10 h-10 text-cyan-400 mb-4" />
+                <h3 className="font-semibold text-lg mb-3">Your Team's Time Back</h3>
+                <p className="text-slate-300">
+                  Stop spending mental energy on repetitive work. Your team focuses on what actually matters.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
         <section className="py-24 px-6 bg-slate-900/30 border-t border-slate-800">
           <div className="max-w-6xl mx-auto">
             <h2 className="text-3xl font-bold mb-16 text-center">
-              Credibility
+              The Real Cost of Doing Nothing
+            </h2>
+
+            <div className="grid md:grid-cols-2 gap-8">
+              <div className="p-8 rounded-xl border border-red-900/50 bg-red-950/20">
+                <h3 className="font-semibold text-lg mb-4 text-red-300">
+                  Every month your team is doing this:
+                </h3>
+                <ul className="space-y-3 text-slate-300">
+                  <li className="flex gap-3">
+                    <span className="text-red-400">•</span>
+                    <span>Spending 40+ hours on manual, repetitive work</span>
+                  </li>
+                  <li className="flex gap-3">
+                    <span className="text-red-400">•</span>
+                    <span>Making data entry mistakes that take time to catch</span>
+                  </li>
+                  <li className="flex gap-3">
+                    <span className="text-red-400">•</span>
+                    <span>Waiting for workflows to complete without automation</span>
+                  </li>
+                  <li className="flex gap-3">
+                    <span className="text-red-400">•</span>
+                    <span>
+                      Losing context switching between disconnected tools
+                    </span>
+                  </li>
+                </ul>
+              </div>
+
+              <div className="p-8 rounded-xl border border-green-900/50 bg-green-950/20">
+                <h3 className="font-semibold text-lg mb-4 text-green-300">
+                  With automation in place:
+                </h3>
+                <ul className="space-y-3 text-slate-300">
+                  <li className="flex gap-3">
+                    <CheckCircle2 className="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5" />
+                    <span>That time becomes available for strategy and growth</span>
+                  </li>
+                  <li className="flex gap-3">
+                    <CheckCircle2 className="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5" />
+                    <span>Fewer errors mean better data and faster decisions</span>
+                  </li>
+                  <li className="flex gap-3">
+                    <CheckCircle2 className="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5" />
+                    <span>Workflows run while your team sleeps</span>
+                  </li>
+                  <li className="flex gap-3">
+                    <CheckCircle2 className="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5" />
+                    <span>Everything connected, integrated, and synchronized</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="py-24 px-6 border-t border-slate-800">
+          <div className="max-w-6xl mx-auto">
+            <h2 className="text-3xl font-bold mb-16 text-center">
+              Our Track Record
             </h2>
 
             <div className="grid md:grid-cols-3 gap-12 text-center">
