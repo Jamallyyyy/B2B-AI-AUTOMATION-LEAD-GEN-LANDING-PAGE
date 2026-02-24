@@ -2,7 +2,7 @@ import { useRef } from 'react';
 import { AuditForm } from './components/AuditForm';
 import {
   ArrowRight,
-  CheckCircle2,
+  CheckCircle,
   MessageSquare,
   Workflow,
   Zap,
@@ -96,7 +96,7 @@ function App() {
             <div className="grid md:grid-cols-2 gap-8">
               <div className="group p-8 rounded-2xl glass-dark border-white/5 hover:border-accent-primary/50 transition-all duration-500 hover:shadow-2xl hover:shadow-accent-primary/10">
                 <div className="w-12 h-12 rounded-xl bg-green-500/10 border border-green-500/20 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                  <CheckCircle2 className="w-6 h-6 text-green-400" />
+                  <CheckCircle className="w-6 h-6 text-green-400" />
                 </div>
                 <h3 className="text-2xl font-bold mb-6 text-white">
                   This Is For You If:
@@ -279,19 +279,19 @@ function App() {
                 </h3>
                 <ul className="space-y-3 text-slate-300">
                   <li className="flex gap-3">
-                    <CheckCircle2 className="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5" />
+                    <CheckCircle className="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5" />
                     <span>That time becomes available for strategy and growth</span>
                   </li>
                   <li className="flex gap-3">
-                    <CheckCircle2 className="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5" />
+                    <CheckCircle className="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5" />
                     <span>Fewer errors mean better data and faster decisions</span>
                   </li>
                   <li className="flex gap-3">
-                    <CheckCircle2 className="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5" />
+                    <CheckCircle className="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5" />
                     <span>Workflows run while your team sleeps</span>
                   </li>
                   <li className="flex gap-3">
-                    <CheckCircle2 className="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5" />
+                    <CheckCircle className="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5" />
                     <span>Everything connected, integrated, and synchronized</span>
                   </li>
                 </ul>
@@ -359,7 +359,7 @@ function App() {
                       "The Choice: You decide if/how to proceed"
                     ].map((step, i) => (
                       <li key={i} className="flex gap-4 items-start">
-                        <CheckCircle2 className="w-6 h-6 text-accent-secondary flex-shrink-0" />
+                        <CheckCircle className="w-6 h-6 text-accent-secondary flex-shrink-0" />
                         <span className="text-slate-300 font-medium leading-tight">{step}</span>
                       </li>
                     ))}
@@ -443,7 +443,7 @@ function App() {
         </section>
 
         <footer className="py-20 px-6 border-t border-white/5 relative bg-slate-900/50">
-          <div className="max-w-7xl mx-auto flex flex-col md:row items-center justify-between gap-8">
+          <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8">
             <div className="flex items-center gap-2">
               <Workflow className="w-5 h-5 text-accent-primary" />
               <span className="font-display font-bold text-lg text-white">Automation Works</span>
