@@ -9,11 +9,9 @@ interface FormData {
   phone: string;
 }
 
-interface AuditFormProps {
-  isDark?: boolean;
-}
 
-export function AuditForm({ isDark = true }: AuditFormProps) {
+
+export function AuditForm() {
   const [formData, setFormData] = useState<FormData>({
     name: '',
     email: '',
@@ -64,151 +62,47 @@ export function AuditForm({ isDark = true }: AuditFormProps) {
 
   if (submitted) {
     return (
-      <div
-        className={`w-full max-w-md rounded-lg p-8 text-center ${
-          isDark
-            ? 'bg-green-950 border border-green-900'
-            : 'bg-green-50 border border-green-200'
-        }`}
-      >
-        <Check
-          className={`w-12 h-12 mx-auto mb-4 ${
-            isDark ? 'text-green-400' : 'text-green-600'
-          }`}
-        />
-        <h3
-          className={`text-lg font-semibold mb-2 ${
-            isDark ? 'text-green-100' : 'text-green-900'
-          }`}
-        >
-          Thank you!
-        </h3>
-        <p
-          className={isDark ? 'text-green-300 text-sm' : 'text-green-700 text-sm'}
-        >
-          We'll review your situation and reach out within 1-2 business days.
+      <div className="w-full max-w-md glass-dark rounded-3xl p-12 text-center animate-fade-in border-green-500/20 shadow-2xl shadow-green-500/10">
+        <div className="w-20 h-20 bg-green-500/10 rounded-full flex items-center justify-center mx-auto mb-6">
+          <Check className="w-10 h-10 text-green-400" />
+        </div>
+        <h3 className="text-2xl font-bold mb-4 text-white">Application Received</h3>
+        <p className="text-slate-400 leading-relaxed">
+          We'll review your operations and reaching out within 1-2 business days to schedule your deep dive.
         </p>
       </div>
     );
   }
 
   return (
-    <form onSubmit={handleSubmit} className="w-full max-w-md space-y-4">
-      <div>
-        <label
-          htmlFor="name"
-          className={`block text-sm font-medium mb-2 ${
-            isDark ? 'text-slate-300' : 'text-slate-700'
-          }`}
-        >
-          Full name
-        </label>
-        <input
-          id="name"
-          type="text"
-          name="name"
-          value={formData.name}
-          onChange={handleChange}
-          required
-          placeholder="Your name"
-          className={`w-full px-4 py-3 rounded-lg transition-colors ${
-            isDark
-              ? 'bg-slate-800 border border-slate-700 text-white placeholder-slate-500 focus:bg-slate-750 focus:border-slate-600'
-              : 'bg-white border border-slate-300 text-slate-900 placeholder-slate-400 focus:border-slate-400'
-          } focus:outline-none focus:ring-2 focus:ring-offset-2 ${
-            isDark ? 'focus:ring-offset-slate-950' : 'focus:ring-offset-white'
-          } focus:ring-blue-500`}
-        />
-      </div>
-
-      <div>
-        <label
-          htmlFor="email"
-          className={`block text-sm font-medium mb-2 ${
-            isDark ? 'text-slate-300' : 'text-slate-700'
-          }`}
-        >
-          Work email
-        </label>
-        <input
-          id="email"
-          type="email"
-          name="email"
-          value={formData.email}
-          onChange={handleChange}
-          required
-          placeholder="you@company.com"
-          className={`w-full px-4 py-3 rounded-lg transition-colors ${
-            isDark
-              ? 'bg-slate-800 border border-slate-700 text-white placeholder-slate-500 focus:bg-slate-750 focus:border-slate-600'
-              : 'bg-white border border-slate-300 text-slate-900 placeholder-slate-400 focus:border-slate-400'
-          } focus:outline-none focus:ring-2 focus:ring-offset-2 ${
-            isDark ? 'focus:ring-offset-slate-950' : 'focus:ring-offset-white'
-          } focus:ring-blue-500`}
-        />
-      </div>
-
-      <div>
-        <label
-          htmlFor="company"
-          className={`block text-sm font-medium mb-2 ${
-            isDark ? 'text-slate-300' : 'text-slate-700'
-          }`}
-        >
-          Company
-        </label>
-        <input
-          id="company"
-          type="text"
-          name="company"
-          value={formData.company}
-          onChange={handleChange}
-          required
-          placeholder="Company name"
-          className={`w-full px-4 py-3 rounded-lg transition-colors ${
-            isDark
-              ? 'bg-slate-800 border border-slate-700 text-white placeholder-slate-500 focus:bg-slate-750 focus:border-slate-600'
-              : 'bg-white border border-slate-300 text-slate-900 placeholder-slate-400 focus:border-slate-400'
-          } focus:outline-none focus:ring-2 focus:ring-offset-2 ${
-            isDark ? 'focus:ring-offset-slate-950' : 'focus:ring-offset-white'
-          } focus:ring-blue-500`}
-        />
-      </div>
-
-      <div>
-        <label
-          htmlFor="phone"
-          className={`block text-sm font-medium mb-2 ${
-            isDark ? 'text-slate-300' : 'text-slate-700'
-          }`}
-        >
-          Phone (optional)
-        </label>
-        <input
-          id="phone"
-          type="tel"
-          name="phone"
-          value={formData.phone}
-          onChange={handleChange}
-          placeholder="+1 (555) 000-0000"
-          className={`w-full px-4 py-3 rounded-lg transition-colors ${
-            isDark
-              ? 'bg-slate-800 border border-slate-700 text-white placeholder-slate-500 focus:bg-slate-750 focus:border-slate-600'
-              : 'bg-white border border-slate-300 text-slate-900 placeholder-slate-400 focus:border-slate-400'
-          } focus:outline-none focus:ring-2 focus:ring-offset-2 ${
-            isDark ? 'focus:ring-offset-slate-950' : 'focus:ring-offset-white'
-          } focus:ring-blue-500`}
-        />
+    <form onSubmit={handleSubmit} className="w-full max-w-md glass-dark p-8 rounded-3xl border-white/5 shadow-2xl space-y-6">
+      <div className="space-y-4">
+        {[
+          { id: 'name', label: 'Full Name', type: 'text', placeholder: 'John Doe' },
+          { id: 'email', label: 'Work Email', type: 'email', placeholder: 'john@company.com' },
+          { id: 'company', label: 'Company', type: 'text', placeholder: 'Acme Corp' },
+          { id: 'phone', label: 'Phone (Optional)', type: 'tel', placeholder: '+1 (555) 000-0000', required: false },
+        ].map((field) => (
+          <div key={field.id}>
+            <label htmlFor={field.id} className="block text-sm font-medium text-slate-400 mb-2 ml-1">
+              {field.label}
+            </label>
+            <input
+              id={field.id}
+              type={field.type}
+              name={field.id}
+              value={(formData as any)[field.id]}
+              onChange={handleChange}
+              required={field.required !== false}
+              placeholder={field.placeholder}
+              className="w-full bg-slate-950/50 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-slate-600 focus:outline-none focus:ring-2 focus:ring-accent-primary/20 focus:border-accent-primary/50 transition-all duration-300"
+            />
+          </div>
+        ))}
       </div>
 
       {error && (
-        <div
-          className={`p-3 rounded-lg text-sm ${
-            isDark
-              ? 'bg-red-950 text-red-200 border border-red-900'
-              : 'bg-red-50 text-red-700 border border-red-200'
-          }`}
-        >
+        <div className="p-4 rounded-xl bg-red-500/10 border border-red-500/20 text-red-400 text-sm animate-shake">
           {error}
         </div>
       )}
@@ -216,29 +110,20 @@ export function AuditForm({ isDark = true }: AuditFormProps) {
       <button
         type="submit"
         disabled={loading}
-        className={`w-full px-6 py-3 rounded-lg font-medium transition-all flex items-center justify-center gap-2 ${
-          isDark
-            ? 'bg-blue-600 hover:bg-blue-700 text-white disabled:bg-blue-600 disabled:opacity-75'
-            : 'bg-blue-600 hover:bg-blue-700 text-white disabled:bg-blue-600 disabled:opacity-75'
-        }`}
+        className="button-primary w-full disabled:opacity-50 disabled:cursor-not-allowed py-4"
       >
         {loading ? (
           <>
-            <Loader2 className="w-4 h-4 animate-spin" />
-            Submitting...
+            <Loader2 className="w-5 h-5 animate-spin" />
+            Processing...
           </>
         ) : (
-          'Request Audit'
+          'Request Free Audit'
         )}
       </button>
 
-      <p
-        className={`text-xs text-center ${
-          isDark ? 'text-slate-500' : 'text-slate-500'
-        }`}
-      >
-        We won't share your information. We'll reach out to discuss your
-        situation.
+      <p className="text-xs text-center text-slate-500 font-medium">
+        🔒 Your data is secure and will never be shared.
       </p>
     </form>
   );

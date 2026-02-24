@@ -1,3 +1,45 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  body {
+    @apply bg-slate-950 text-slate-200 antialiased selection:bg-accent-primary/30 selection:text-white;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display tracking-tight;
+  }
+}
+
+@layer components {
+  .glass {
+    @apply bg-white/5 backdrop-blur-md border border-white/10;
+  }
+  
+  .glass-dark {
+    @apply bg-slate-900/50 backdrop-blur-lg border border-slate-800/50;
+  }
+
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-cyan-400;
+  }
+
+  .button-primary {
+    @apply relative overflow-hidden bg-accent-primary hover:bg-blue-500 text-white px-8 py-4 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 active:scale-95 shadow-lg shadow-accent-primary/20 flex items-center justify-center gap-2;
+  }
+
+  .button-secondary {
+    @apply glass hover:bg-white/10 text-white px-8 py-4 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 active:scale-95 flex items-center justify-center gap-2;
+  }
+
+  .grid-pattern {
+    background-image: radial-gradient(circle at 1px 1px, rgba(255, 255, 255, 0.05) 1px, transparent 0);
+    background-size: 40px 40px;
+  }
+}
