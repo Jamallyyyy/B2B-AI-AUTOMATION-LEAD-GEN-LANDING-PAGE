@@ -1,5 +1,15 @@
 import { useRef } from 'react';
 import { AuditForm } from './components/AuditForm';
+import { ROICalculator } from './components/ROICalculator';
+import { ToolGrid } from './components/ToolGrid';
+import { ScrollProgress } from './components/ScrollProgress';
+import { TrustBar } from './components/TrustBar';
+import { BeamCard } from './components/BeamCard';
+import { Magnetic } from './components/Magnetic';
+import { ExitIntentModal } from './components/ExitIntentModal';
+import { TestimonialBento } from './components/TestimonialBento';
+import { FounderSection } from './components/FounderSection';
+import { CustomCursor } from './components/CustomCursor';
 import {
   ArrowRight,
   CheckCircle,
@@ -22,6 +32,9 @@ function App() {
 
   return (
     <div className="min-h-screen bg-slate-950 text-slate-50 overflow-hidden">
+      <CustomCursor />
+      <ScrollProgress />
+      <ExitIntentModal />
       <nav className="sticky top-0 z-50 glass-dark border-b border-white/5">
         <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
           <div className="flex items-center gap-2 group cursor-pointer">
@@ -70,22 +83,28 @@ function App() {
             </p>
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-6 animate-slide-up [animation-delay:400ms]">
-              <button
-                onClick={scrollToContact}
-                className="button-primary group w-full sm:w-auto"
-              >
-                Request an Automation Audit
-                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-              </button>
-              <button
-                onClick={() => document.getElementById('how-it-works')?.scrollIntoView({ behavior: 'smooth' })}
-                className="button-secondary w-full sm:w-auto"
-              >
-                How It Works
-              </button>
+              <Magnetic>
+                <button
+                  onClick={scrollToContact}
+                  className="button-primary group w-full sm:w-auto"
+                >
+                  Request an Automation Audit
+                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                </button>
+              </Magnetic>
+              <Magnetic strength={0.2}>
+                <button
+                  onClick={() => document.getElementById('how-it-works')?.scrollIntoView({ behavior: 'smooth' })}
+                  className="button-secondary w-full sm:w-auto"
+                >
+                  How It Works
+                </button>
+              </Magnetic>
             </div>
           </div>
         </section>
+
+        <TrustBar />
 
         <section className="py-24 px-6 relative bg-slate-900/20">
           <div className="max-w-6xl mx-auto">
@@ -94,7 +113,7 @@ function App() {
             </h2>
 
             <div className="grid md:grid-cols-2 gap-8">
-              <div className="group p-8 rounded-2xl glass-dark border-white/5 hover:border-accent-primary/50 transition-all duration-500 hover:shadow-2xl hover:shadow-accent-primary/10">
+              <BeamCard className="h-full">
                 <div className="w-12 h-12 rounded-xl bg-green-500/10 border border-green-500/20 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                   <CheckCircle className="w-6 h-6 text-green-400" />
                 </div>
@@ -114,9 +133,9 @@ function App() {
                     </li>
                   ))}
                 </ul>
-              </div>
+              </BeamCard>
 
-              <div className="group p-8 rounded-2xl glass-dark border-white/5 hover:border-slate-700 transition-all duration-500">
+              <BeamCard className="h-full opacity-80 hover:opacity-100 transition-opacity">
                 <div className="w-12 h-12 rounded-xl bg-slate-500/10 border border-slate-500/20 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                   <Users className="w-6 h-6 text-slate-400" />
                 </div>
@@ -136,7 +155,7 @@ function App() {
                     </li>
                   ))}
                 </ul>
-              </div>
+              </BeamCard>
             </div>
           </div>
         </section>
@@ -198,6 +217,12 @@ function App() {
           </div>
         </section>
 
+        <section className="py-24 px-6 relative">
+          <ROICalculator />
+        </section>
+
+        <ToolGrid />
+
         <section className="py-24 px-6 relative bg-slate-900/10">
           <div className="max-w-6xl mx-auto relative z-10">
             <h2 className="text-4xl md:text-5xl font-bold mb-16 text-center tracking-tight">
@@ -239,6 +264,8 @@ function App() {
             </div>
           </div>
         </section>
+
+        <TestimonialBento />
 
         <section className="py-24 px-6 bg-slate-900/30 border-t border-slate-800">
           <div className="max-w-6xl mx-auto">
@@ -419,6 +446,8 @@ function App() {
             </div>
           </div>
         </section>
+
+        <FounderSection />
 
         <section
           ref={contactRef}
